@@ -8,6 +8,7 @@ if(isset($_GET['id'])){
     $result = mysqli_fetch_assoc($fetch_edituser_result);
 }else{
     header('location:'. 'manage-users.php');
+    die();
 }
 ?>
 <section>

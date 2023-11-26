@@ -29,6 +29,22 @@ include 'header.php';
                 ?>
             </p>
         </div>
+    <?php elseif (isset($_SESSION["add-category-success"])): ?>
+        <div>
+            <p>
+                <?= $_SESSION['add-category-success'];
+                unset($_SESSION['add-category-success']);
+                ?>
+            </p>
+        </div>
+    <?php elseif (isset($_SESSION["edit-category-success"])): ?>
+        <div>
+            <p>
+                <?= $_SESSION['edit-category-success'];
+                unset($_SESSION['edit-category-success']);
+                ?>
+            </p>
+        </div>
     <?php endif ?>
 
     <a href="">Add posts</a><br>
@@ -38,8 +54,8 @@ include 'header.php';
 
         <a href="add-user.php">add user</a><br>
         <a href="manage-users.php">manage user</a><br>
-        <a href="">add category</a><br>
-        <a href="">manage category</a><br>
+        <a href="add-category.php">add category</a><br>
+        <a href="manage-categories.php">manage category</a><br>
 
     <?php endif ?>
 </section>

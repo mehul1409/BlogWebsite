@@ -7,6 +7,7 @@ $fetch_users_result = mysqli_query($conn, $fetch_users);
 
 ?>
 <section>
+
     <h2>Manage users</h2>
     <?php
     if (isset($_SESSION["edit-user"])): ?>
@@ -26,6 +27,7 @@ $fetch_users_result = mysqli_query($conn, $fetch_users);
             </h3>
         </div>
     <?php endif ?>
+    <?php if(mysqli_num_rows($fetch_users_result) > 0): ?>
     <table>
         <thead>
             <tr>
@@ -47,8 +49,10 @@ $fetch_users_result = mysqli_query($conn, $fetch_users);
                 </tr>
             <?php endwhile ?>
         </tbody>
-
     </table>
+    <?php else :?>
+        <h1>No users found</h1>
+    <?php endif ?>
 </section>
 
 <?php
