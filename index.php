@@ -1,13 +1,13 @@
 <?php 
 
-include 'partials/header.php'
+include 'header.php'
 
 ?>
 
-<section>dashboard page</section>
+<section>index page</section>
 
 <?php
 
-include '../partials/footer.php'
+include 'footer.php'
 
 ?>

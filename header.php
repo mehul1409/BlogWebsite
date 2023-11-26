@@ -1,33 +1,43 @@
 <?php
+session_start();
+require 'database.php';
 
-require './config/database.php';
-
+if(isset($_SESSION['user-id'])){
+    $id = $_SESSION['user-id'];
+    $fetch_user = "SELECT avatar FROM users WHERE id = '$id';";
+    $fetch_user_result = mysqli_query($conn,$fetch_user);
+    $avatar = mysqli_fetch_assoc($fetch_user_result);
+}
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="./css/style.css">
+    <link href="style.css">
 </head>
+
 <body>
     <nav>
         <a href="index.php">BLOGIFY</a>
         <ul>
-            <a href="<?= ROOT_URL?>blog.php">Blog</a>
-            <a href="<?= ROOT_URL?>about.php">about</a>
-            <a href="<?= ROOT_URL?>services.php">services</a>
-            <a href="<?= ROOT_URL?>contact.php">contact</a>
-            <a href="<?= ROOT_URL?>signin.php">signin</a>
-           <div>
-           <img src="./images/avatar1.jpg" alt="">
-           </div>
-           <div></div>
-            <a href="index.php">dashboard</a>
-            <a href="logout.php">logout</a>
+            <a href="blog.php">Blog</a>
+            <a href="about.php">about</a>
+            <a href="services.php">services</a>
+            <a href="contact.php">contact</a>
+            <?php if (isset($_SESSION['user-id'])): ?>
+                <div>
+                    <img src="<?= 'userimages/'.$avatar['avatar'] ?>" alt="profile picture">
+                </div>
+                <div></div>
+                <a href="dashboard.php">dashboard</a>
+                <a href="logout.php">logout</a>
+            <?php else: ?>
+                <a href="signin.php">signin</a>
+            <?php endif ?>
         </ul>
     </nav>
-    
