@@ -3,7 +3,6 @@ include 'header.php';
 ?>
 
 <section>
-
     <?php
     if (isset($_SESSION["add-user-success"])): ?>
         <div>
@@ -45,10 +44,34 @@ include 'header.php';
                 ?>
             </p>
         </div>
+    <?php elseif (isset($_SESSION["edit-post-success"])): ?>
+        <div>
+            <p>
+                <?= $_SESSION['edit-post-success'];
+                unset($_SESSION['edit-post-success']);
+                ?>
+            </p>
+        </div>
+    <?php elseif (isset($_SESSION["delete-post-success"])): ?>
+        <div>
+            <p>
+                <?= $_SESSION['delete-post-success'];
+                unset($_SESSION['delete-post-success']);
+                ?>
+            </p>
+        </div>
+    <?php elseif (isset($_SESSION["add-post-success"])): ?>
+        <div>
+            <p>
+                <?= $_SESSION['add-post-success'];
+                unset($_SESSION['add-post-success']);
+                ?>
+            </p>
+        </div>
     <?php endif ?>
 
-    <a href="">Add posts</a><br>
-    <a href="">Manage posts</a><br>
+    <a href="add-post.php">Add posts</a><br>
+    <a href="manage-post.php">Manage posts</a><br>
 
     <?php if (isset($_SESSION['user_isadmin'])): ?>
 

@@ -18,6 +18,17 @@ if(isset($_GET['id'])){
         }
     }
 
+    $thumbnails_query = "select thumbnail from posts where author_id = $id";
+    $thumbnail_result = mysqli_query($conn,$thumbnails_query);
+    if( mysqli_num_rows($thumbnail_result) > 0){
+       while( $thumbnail = mysqli_fetch_assoc($thumbnail_result)){
+        $thumbnail_path = 'userimages/'.$thumbnail["thumbnail"];
+        if($thumbnail_path){
+            unlink($thumbnail_path);
+        }
+       }
+    }
+
     $delete_user = "delete from users where id = $id";
     $delete_user_result = mysqli_query($conn,$delete_user);
     if(mysqli_errno($conn)){
