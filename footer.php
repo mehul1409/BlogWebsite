@@ -2,11 +2,11 @@
       <div class="footer-container">
       <div class="footer-links">
           <ul class="footerli">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#services">services</a></li>
-            <li><a href="#contactus">Contact us</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="blog.php">Blog</a></li>
+            <li><a href="about.php">about</a></li>
+            <li><a href="services.php">services</a></li>
+            <li><a href="contact.php">Contact us</a></li>
           </ul>
         </div>
         
