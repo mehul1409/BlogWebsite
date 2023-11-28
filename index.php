@@ -1,15 +1,34 @@
 <?php 
 
-include 'header.php'
+include 'header.php';
 
+$query = "SELECT * FROM posts ORDER BY `date-time` DESC LIMIT 9;";
+$posts = mysqli_query($conn, $query);
 ?>
 
-<section>
-    <div class="indexpage">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, tenetur provident? Voluptates tenetur dolorem sint sit, labore sed eos eum aliquid consequuntur nostrum rerum animi reprehenderit quod cupiditate fuga excepturi? Rem similique minima accusamus a? Atque amet quia rem nisi commodi eveniet non quos vero recusandae natus repudiandae officiis quas repellat modi iusto similique optio quidem minima ducimus dicta illo et tenetur, ut laudantium. Reprehenderit deleniti quibusdam perferendis assumenda, dignissimos natus libero voluptatibus autem nisi, magnam, officiis quis necessitatibus iste laborum unde. Explicabo, voluptates molestias dolore suscipit recusandae mollitia natus laborum neque nihil qui beatae quidem soluta vel tempore maxime harum. Vel similique corporis cupiditate, aspernatur mollitia, sunt amet sequi enim quae voluptatum repudiandae voluptatibus? Reprehenderit, atque quod rem eum animi distinctio ipsum quae suscipit consectetur, quidem tempora deleniti ab est sapiente reiciendis voluptates autem vitae perferendis. Laboriosam eos in repellendus atque perspiciatis eveniet quia inventore earum debitis amet nesciunt assumenda porro, repudiandae praesentium, quaerat modi illum voluptatem aut magni tenetur mollitia similique sequi architecto. Vel accusamus aliquid quia, cumque suscipit incidunt perferendis quam repudiandae alias nam id, dolore fugiat facere voluptatem aspernatur commodi dolorem. Ea atque delectus, repudiandae enim deleniti fugit veniam. Reprehenderit expedita deserunt dolor voluptatum maiores, amet natus illum ullam illo nemo soluta voluptatibus minima a architecto sit hic quam unde voluptas suscipit vitae repellendus, laborum explicabo necessitatibus repudiandae. Provident, accusamus veniam temporibus earum ipsum voluptate, molestias, atque vel voluptatum suscipit cupiditate aliquam incidunt qui cum similique? Sunt possimus officia sint tenetur veniam quae ullam, illo necessitatibus officiis voluptate sapiente, facere delectus rerum autem quisquam, reprehenderit suscipit? Vel officia facilis ullam? Saepe suscipit nobis hic rerum nemo voluptate cupiditate voluptatibus est molestiae. Hic reiciendis vero modi quaerat cupiditate vel corporis! Ipsa aliquam consequatur natus vitae at beatae nulla. Fugiat dicta cupiditate ipsum alias cumque aliquam magnam incidunt at eum maiores nobis porro earum quis, laboriosam hic nihil, aut aliquid tempora blanditiis. Optio alias obcaecati ea, veritatis at iste ipsum dolores recusandae dignissimos, iure quaerat veniam dicta, molestiae eius porro rem officiis impedit sed voluptatem totam architecto. Earum aliquam dolores hic asperiores nisi cumque dolorum sequi fugit odit harum dignissimos at voluptatum enim, doloribus nostrum? Voluptates accusamus odit porro, inventore sit consequuntur cupiditate a eos amet eius numquam incidunt deserunt facilis reiciendis dolore temporibus, minima harum placeat quibusdam? Inventore ipsum et quod iusto molestias in voluptatem culpa, praesentium ducimus, eius rem dicta ullam nobis nesciunt repudiandae. Assumenda, ex.</div>
+<section class="posts">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <?php while ($row = mysqli_fetch_assoc($posts)) : ?>
+            <div style="display: flex; flex-direction: column; border: 1px solid #ccc; max-width: 100%; margin:20px 10px;border-radius:30px;">
+                <div style="max-width: 100%; overflow: hidden;">
+                    <img src="<?= 'userimages/'.$row['thumbnail'] ?>" alt="post thumbnail" style="width: 100%; height: auto;border-radius:30px; ">
+                </div>
+                <div style="padding: 10px;">
+                    <?php
+                    $categoryQuery = "SELECT tittle FROM category WHERE id = {$row['category_id']}; ";
+                    $categoryResult = mysqli_query($conn, $categoryQuery);
+                    $categoryRow = mysqli_fetch_assoc($categoryResult);
+                    $categoryName = $categoryRow['tittle'];
+                    ?>
+                    <h3 style="margin: 0; color: #3498db; text-align:center;"><?= $categoryName ?></h3>
+                    <div style="font-size: 1.2em; margin: 5px 0; text-align: justify; "><?= $row['tittle'] ?></div>
+                    <div style="margin: 5px 0;text-align: justify;"><?= $row['body'] ?></div>
+                </div>
+            </div>
+             <?php endwhile ?>
+        </div>
 </section>
 
 <?php
-
-include 'footer.php'
-
+include 'footer.php';
 ?>
