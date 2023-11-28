@@ -6,12 +6,12 @@ $fetch_posts = "select id , tittle , category_id from posts where author_id = $c
 $fetch_users_result = mysqli_query($conn, $fetch_posts);
 
 ?>
-<section>
+<section class="manage-posts-section">
 
-    <h2>Manage posts</h2>
+    <h2 class="manage-posts-heading">Manage posts</h2>
     <?php
     if (isset($_SESSION["edit-post"])): ?>
-        <div>
+        <div class="success-message">
             <h3>
                 <?= $_SESSION['edit-post'];
                 unset($_SESSION['edit-post']);
@@ -19,7 +19,7 @@ $fetch_users_result = mysqli_query($conn, $fetch_posts);
             </h3>
         </div>
     <?php elseif (isset($_SESSION["delete-post"])): ?>
-        <div>
+        <div class="success-message">
             <h3>
                 <?= $_SESSION['delete-post'];
                 unset($_SESSION['delete-post']);
@@ -28,11 +28,11 @@ $fetch_users_result = mysqli_query($conn, $fetch_posts);
         </div>
     <?php endif ?>
     <?php if(mysqli_num_rows($fetch_users_result) > 0): ?>
-    <table>
+    <table class="posts-table">
         <thead>
             <tr>
-                <th>tittle</th>
-                <th>category</th>
+                <th>Title</th>
+                <th>Category</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -48,14 +48,14 @@ $fetch_users_result = mysqli_query($conn, $fetch_posts);
                 <tr>
                     <td><?= $result['tittle']?></td>
                     <td><?= $categorytittle['tittle'] ?></td>
-                    <td><a href="edit-post.php?id=<?= $result['id']?>">Edit</a></td>
-                    <td><a href="delete-post.php?id=<?= $result['id']?>">Delete</a></td>
+                    <td><a href="edit-post.php?id=<?= $result['id']?>" class="edit-link">Edit</a></td>
+                    <td><a href="delete-post.php?id=<?= $result['id']?>" class="delete-link">Delete</a></td>
                 </tr>
             <?php endwhile ?>
         </tbody>
     </table>
     <?php else :?>
-        <h1>No posts found</h1>
+        <h1 class="nopostmessage">No posts found</h1>
     <?php endif ?>
 </section>
 

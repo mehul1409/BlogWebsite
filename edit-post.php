@@ -14,18 +14,18 @@ if (isset($_GET['id'])) {
     die();
 }
 ?>
-<section>
-    <h2>Edit post</h2>
-    <form action="edit-post-logic.php" method="post">
-        <input type="hidden" name="id" value="<?= $result['id'] ?>">
-        tittle:<input type="text" name="tittle" value="<?= $result['tittle'] ?>"><br><br>
-        category :<select name="category">
+<section class="edit-post-section">
+    <h2 class="edit-post-heading">Edit post</h2>
+    <form action="edit-post-logic.php" method="post" class="edit-post-form">
+        <input type="hidden" name="id" value="<?= $result['id'] ?>" class="post-id">
+        Tittle:<input type="text" name="tittle" value="<?= $result['tittle'] ?>" class="post-tittle"><br><br>
+        Category :<select name="category" class="post-category">
             <?php while ($row = mysqli_fetch_assoc($fetchcategoryresult)): ?>
                 <option value="<?= $row['id']?>"><?= $row['tittle'] ?></option>
             <?php endwhile ?>
         </select><br><br>
-        body: <textarea name="body"><?= $result['body'] ?></textarea><br><br>
-        <input type="submit" name="submit" value="update post"><br><br>
+        Body: <textarea name="body" class="post-body"><?= $result['body'] ?></textarea><br><br>
+        <input type="submit" name="submit" value="Update Post" class="submit-button"><br><br>
     </form>
 </section>
 

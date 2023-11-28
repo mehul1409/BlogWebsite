@@ -11,13 +11,26 @@ if (isset($_GET['id'])) {
     die();
 }
 ?>
-<section>
+<section class="edit-category-section">
+    <?php
+    if (isset($_SESSION["edit-category"])): ?>
+        <div class="success-message">
+            <h3>
+                <?= $_SESSION['edit-category'];
+                unset($_SESSION['edit-category']);
+                ?>
+            </h3>
+        </div>
+    <?php endif ?>
+
     <h2>Edit category</h2>
-    <form action="edit-category-logic.php" method="post">
+    <form class="edit-category-form" action="edit-category-logic.php" method="post">
         <input type="hidden" name="id" value="<?= $result['id'] ?>">
-        tittle:<input type="text" name="tittle" value="<?= $result['tittle'] ?>"><br><br>
-        description: <textarea name="description"><?= $result['description'] ?></textarea><br><br>
-        <input type="submit" name="submit" value="update category"><br><br>
+        <label for="tittle">Title:</label>
+        <input type="text" name="tittle" value="<?= $result['tittle'] ?>"><br><br>
+        <label for="description">Description:</label>
+        <textarea name="description"><?= $result['description'] ?></textarea><br><br>
+        <input type="submit" name="submit" value="Update Category"><br><br>
     </form>
 </section>
 

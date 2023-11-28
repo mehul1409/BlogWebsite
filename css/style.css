@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600&family=Montserrat:ital,wght@0,100;0,500;0,700;1,100;1,500;1,800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@500&family=Rubik:wght@300;400;500;700&family=Ysabeau+SC:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Add this to your existing CSS or modify as needed */
+.signup {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup h2 {
+    color: #333;
+}
+
+.signup-form {
+    text-align: left;
+}
+
+.signup-form input,
+.signup-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.signup-form select {
+    margin-bottom: 20px;
+}
+
+.signup-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* Add this to your existing CSS or modify as needed */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.logo{
+    text-decoration: none;
+    color:white;
+    font-size:2rem;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #ffd700; /* Change the color on hover as needed */
+}
+
+.nav-profile {
+    margin-right: 10px;
+}
+
+.nav-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Add responsive styling */
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        margin-top: 10px;
+    }
+}
+
+/* Add this to your existing CSS or modify as needed */
+.signin {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signin p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profilepic{
+    height:70px;
+    width:80px;
+    border-radius: 50%;
+}
+
+.signin-form {
+    text-align: left;
+}
+
+.signin-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.signin-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.signin-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.signin a {
+    color: #333;
+    text-decoration: none;
+}
+
+.signin a:hover {
+    color: #ffd700; /* Change the color on hover as needed */
+}
+
+
+/* Additional styling for the add posts section */
+.add-posts-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.add-posts-heading {
+    color: #333;
+}
+
+.error-message {
+    color: #ff0000;
+}
+
+.add-posts-form {
+    text-align: left;
+}
+
+.post-title,
+.category-select,
+.post-body,
+.thumbnail-input,
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .add-posts-form {
+        margin-top: 20px;
+    }
+}
+/* Additional styling for the manage posts section */
+.manage-posts-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.manage-posts-heading {
+    color: #333;
+}
+
+.success-message {
+    color: #008000;
+}
+
+.posts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.posts-table th, .posts-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.posts-table th {
+    background-color: #f2f2f2;
+}
+
+.edit-link, .delete-link {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.edit-link:hover, .delete-link:hover {
+    text-decoration: underline;
+}
+
+.nopostmessage {
+    color: #999;
+    margin-top: 20px;
+}
+/* Additional styling for the edit post section */
+.edit-post-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.edit-post-heading {
+    color: #333;
+}
+
+.edit-post-form {
+    text-align: left;
+}
+
+.post-id,
+.post-tittle,
+.post-category,
+.post-body,
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .edit-post-form {
+        margin-top: 20px;
+    }
+}
+
+
+
+/* Additional styling for the manage users section */
+.manage-users-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.manage-users-heading {
+    color: #333;
+}
+
+.message-box {
+    margin-bottom: 20px;
+}
+
+.message {
+    color: #333;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.users-table th, .users-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.users-table th {
+    background-color: #f2f2f2;
+}
+
+.user-name, .user-username, .edit-col, .delete-col, .admin-col {
+    text-align: left;
+}
+
+.edit-link, .delete-link {
+    text-decoration: none;
+    color: #007BFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .users-table {
+        margin-top: 10px;
+    }
+}
+
+
+/* Additional styling for the add category section */
+.add-category-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.add-category-heading {
+    color: #333;
+}
+
+.category-message {
+    color: #333;
+}
+
+.category-form {
+    margin-top: 20px;
+}
+
+.category-input, .category-textarea, .category-submit {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.category-textarea {
+    resize: vertical;
+}
+
+.category-submit {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .category-form {
+        margin-top: 10px;
+    }
+}
+
+/* Additional styling for the manage categories section */
+.manage-categories-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.manage-categories-heading {
+    color: #333;
+}
+
+.edit-category-message, .delete-category-message, .no-categories-message {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.category-table th, .category-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.edit-link, .delete-link {
+    text-decoration: none;
+    color: #007BFF;
+    margin: 0 5px;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .category-table th, .category-table td {
+        font-size: 12px;
+    }
+}
+
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Additional styling for the dashboard section */
+.dashboard-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.success-message {
+    background-color: #007BFF;
+    border: 1px solid #0056b3;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.dashboard-link {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.dashboard-link:nth-child(odd) {
+    background: linear-gradient(to right, #2d6bff, #0069d9);
+}
+
+.dashboard-link:nth-child(even) {
+    background: linear-gradient(to right, #fc4cfd, #0086b3);
+}
+
+.dashboard-link:hover {
+    background: gray;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Additional styling for the edit category section */
+.edit-category-section {
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(to right, #2d6bff, #0069d9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.success-message {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.edit-category-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-category-form label {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.edit-category-form input,
+.edit-category-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-category-form input[type="submit"] {
+    background-color:black;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-category-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Additional styling for the edit user section */
+.edit-user-section {
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(to right, #ff6b6b, #ee0979);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.success-message {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.edit-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-user-form label {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.edit-user-form input,
+.edit-user-form select {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.edit-user-form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-user-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Add your existing CSS styles here */
+/* Add your existing CSS styles here */
+
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    flex-grow: 1;
+}
+
+.footerli {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footerli li {
+    margin-right: 20px;
+}
+
+.footerli a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.3rem;
+}
+
+.footerli a:hover {
+    color: #ffd700; /* Change the color on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+
+/* Add any additional styles as needed */

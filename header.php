@@ -18,20 +18,20 @@ if(isset($_SESSION['user-id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <nav>
-        <a href="index.php">BLOGIFY</a>
-        <ul>
+        <a href="index.php" class="logo">BLOGIFY</a>
+        <ul class="navbar">
             <a href="blog.php">Blog</a>
             <a href="about.php">about</a>
             <a href="services.php">services</a>
             <a href="contact.php">contact</a>
             <?php if (isset($_SESSION['user-id'])): ?>
                 <div>
-                    <img src="<?= 'userimages/'.$avatar['avatar'] ?>" alt="profile picture">
+                    <img class="profilepic" src="<?= 'userimages/'.$avatar['avatar'] ?>" alt="profile picture">
                 </div>
                 <div></div>
                 <a href="dashboard.php">dashboard</a>

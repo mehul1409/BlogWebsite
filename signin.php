@@ -1,6 +1,6 @@
 <?php
-session_start();
-require 'constants.php';
+
+include 'header.php';
 
 $username = $_SESSION['signin-data']['username'] ?? null;
 $password = $_SESSION['signin-data']['password'] ?? null;
@@ -9,11 +9,14 @@ unset($_SESSION['signin-data']);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <section>
         <div class="signin">
@@ -30,13 +33,16 @@ unset($_SESSION['signin-data']);
                     ?>
                 </p>
             <?php endif ?>
-            <form action="signin-logic.php" method="post">
-                username or email:<input type="text" name="username" value="<?= $username ?>"><br><br>
-                password:<input type="password" name="password"><br><br>
+            <form class="signin-form" action="signin-logic.php" method="post">
+                <label for="username">Username or Email:</label>
+                <input type="text" id="username" name="username" value="<?= $username ?>"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
                 <input type="submit" name="submit"><br><br>
             </form>
             <div><a href="signup.php">Don't have an account?</a></div>
         </div>
     </section>
 </body>
+
 </html>

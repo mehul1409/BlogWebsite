@@ -2,10 +2,10 @@
 include 'header.php';
 ?>
 
-<section>
+<section class="dashboard-section">
     <?php
     if (isset($_SESSION["add-user-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['add-user-success'];
                 unset($_SESSION['add-user-success']);
@@ -13,7 +13,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["edit-user-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['edit-user-success'];
                 unset($_SESSION['edit-user-success']);
@@ -21,7 +21,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["delete-user-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['delete-user-success'];
                 unset($_SESSION['delete-user-success']);
@@ -29,7 +29,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["add-category-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['add-category-success'];
                 unset($_SESSION['add-category-success']);
@@ -37,7 +37,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["edit-category-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['edit-category-success'];
                 unset($_SESSION['edit-category-success']);
@@ -45,7 +45,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["edit-post-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['edit-post-success'];
                 unset($_SESSION['edit-post-success']);
@@ -53,7 +53,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["delete-post-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['delete-post-success'];
                 unset($_SESSION['delete-post-success']);
@@ -61,7 +61,7 @@ include 'header.php';
             </p>
         </div>
     <?php elseif (isset($_SESSION["add-post-success"])): ?>
-        <div>
+        <div class="success-message">
             <p>
                 <?= $_SESSION['add-post-success'];
                 unset($_SESSION['add-post-success']);
@@ -70,15 +70,15 @@ include 'header.php';
         </div>
     <?php endif ?>
 
-    <a href="add-post.php">Add posts</a><br>
-    <a href="manage-post.php">Manage posts</a><br>
+    <a href="add-post.php" class="dashboard-link">Add posts</a>
+    <a href="manage-post.php" class="dashboard-link">Manage posts</a>
 
     <?php if (isset($_SESSION['user_isadmin'])): ?>
 
-        <a href="add-user.php">add user</a><br>
-        <a href="manage-users.php">manage user</a><br>
-        <a href="add-category.php">add category</a><br>
-        <a href="manage-categories.php">manage category</a><br>
+        <a href="add-user.php" class="dashboard-link">Add user</a>
+        <a href="manage-users.php" class="dashboard-link">Manage user</a>
+        <a href="add-category.php" class="dashboard-link">Add category</a>
+        <a href="manage-categories.php" class="dashboard-link">Manage category</a>
 
     <?php endif ?>
 </section>

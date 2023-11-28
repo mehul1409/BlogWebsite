@@ -1,8 +1,7 @@
-<footer className="footer">
-      <div className="footer-container">
-      <div className="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
+<footer class="footer">
+      <div class="footer-container">
+      <div class="footer-links">
+          <ul class="footerli">
             <li><a href="#home">Home</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#about">about</a></li>
