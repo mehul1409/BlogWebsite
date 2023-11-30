@@ -28,7 +28,7 @@ $posts = mysqli_query($conn, $query);
              <?php endwhile ?>
         </div>
 </section>
-
+            
 <?php
 include 'footer.php';
 ?>
